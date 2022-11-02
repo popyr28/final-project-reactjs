@@ -142,7 +142,7 @@ const Home = () => {
                   <div className='head-title text-center'>{messageError}</div>
                 ) : (
                   movie.Search.map((data, index) => (
-                    <div className='card m-2 col-2 shadow' key={index}>
+                    <div className='card m-2 col-sm-12 col-md-4 col-lg-2 shadow' key={index}>
                       <div className='content-card'>
                         <div className='photo-card' data-bs-toggle="modal" data-bs-target="#detailModal" onClick={(e) => {
                             e.preventDefault()
