@@ -62,12 +62,16 @@ const Home = () => {
       })  
     }, [])
 
-    const searchMovie = (DEFAULT_SEARCH) => {
-      TEMP_SEARCH = DEFAULT_SEARCH
+    const searchMovie = (searchValue) => {
+      TEMP_SEARCH = searchValue
       setCurrentPage(0)
       setMovie({
         type: "SEARCH_MOVIE_REQUEST"
       })
+
+      if(searchValue === ''){
+        TEMP_SEARCH = DEFAULT_SEARCH
+      }
 
       fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${TEMP_SEARCH}&page=1`)
       .then((response) => response.json())
